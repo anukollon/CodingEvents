@@ -1,0 +1,21 @@
+﻿<h1>Delete Event</h1>
+
+<form method="post">
+    @if (ViewBag.Events.Count == 0)
+    {
+        <p>No Events yet!</p>
+        <input type="submit" value="Go Back" class="btn" />
+    }
+    else
+    {
+        @foreach (var evnt in ViewBag.Events)
+        {
+            <div class="form-group">
+                <input type="checkbox" name="eventIds" value="@evnt.Id" />
+                <span>@evnt.Name</span>
+            </div>
+
+        }
+        <input type="submit" value="Delete Selected Events" class="btn-danger"/>
+    }
+</form>
